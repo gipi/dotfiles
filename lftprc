@@ -1,0 +1,2 @@
+set ftp:ssl-force true
+set ssl:ca-file ~/.ftp.pem
