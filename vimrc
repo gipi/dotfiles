@@ -6,6 +6,8 @@ set listchars=tab:▸\ ,eol:¬
 " unicode 2026
 set showbreak=…
 
+" Python stuffs primarly
+set noexpandtab
 let g:netrw_ftp_cmd = "lftp"
 
 set sw=4
