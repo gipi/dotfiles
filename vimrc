@@ -5,6 +5,7 @@ set hls
 set listchars=tab:▸\ ,eol:¬
 " unicode 2026
 set showbreak=…
+set list
 
 " Python stuffs primarly
 set noexpandtab
@@ -13,6 +14,8 @@ let g:netrw_ftp_cmd = "lftp"
 set sw=4
 set ts=4
 set sts=4
+
+set mouse=a
 
 
 "
