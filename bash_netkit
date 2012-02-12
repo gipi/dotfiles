@@ -1,0 +1,12 @@
+# http://wiki.netkit.org/download/netkit/INSTALL
+# script per attivare netkit
+
+export NETKIT_HOME=/opt/netkit
+export MANPATH=$MANPATH:$NETKIT_HOME/man
+export PATH=$NETKIT_HOME/bin:$PATH
+
+# completion
+. $NETKIT_HOME/bin/netkit_bash_completion
+
+# prompt (TODO: script deactivate)
+PS1="(netkit)$PS1"
