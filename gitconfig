@@ -1,0 +1,16 @@
+[user]
+	name = Gianluca Pacchiella
+	email = gianluca.pacchiella@ktln2.org
+[color]
+	diff = true
+[sendemail]
+	smtpserver = /usr/bin/msmtp
+
+[alias]
+	python-clean = !"find . -iname '*.pyc' -exec rm '{}' ';'"
+	freshnclean = "!TDIR=$(mktemp -d);for f in $(git ls-files --others); do cp --parents $f ${TDIR};done;echo look in $TDIR"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	rebase-r-master = "!f() { git rebase --onto master $(git merge-base master $1) $1; }; f"
+
+[diff "exif"]
+	textconv = exiftool
