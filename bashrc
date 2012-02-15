@@ -105,3 +105,6 @@ if [ -f /usr/src/git/contrib/completion/git-completion.bash ]; then
     # in order to show the brach in which you are
     PS1+='$(__git_ps1 "\"%s\" branch ")'
 fi
+
+# Don't store duplicate adjacent items in the history
+HISTCONTROL=ignoreboth
