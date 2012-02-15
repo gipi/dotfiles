@@ -97,3 +97,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# git PS1 stuffs
+export GIT_PS1_SHOWDIRTYSTATE=1
+if [ -f /usr/src/git/contrib/completion/git-completion.bash ]; then
+    . /usr/src/git/contrib/completion/git-completion.bash
+    # in order to show the brach in which you are
+    PS1+='$(__git_ps1 "\"%s\" branch ")'
+fi
