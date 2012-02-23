@@ -27,3 +27,7 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Arduino related stuffs
+" From https://github.com/GrayHats/arduino_scripts
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
