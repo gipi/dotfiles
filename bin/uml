@@ -1,0 +1,31 @@
+#!/bin/bash
+
+die() {
+	echo $1
+	exit 1
+}
+
+[ -n "$1" ] || { die "usage $0 <machine name>"; }
+
+[ "$1" == "--list" ] && {
+	for machine in $(ls *.cow)
+	do
+		echo -e '\t'${machine/.cow/}
+	done
+
+	exit 0
+}
+
+MACHINE_NAME="$1"
+DEBIAN_ROOT_FS="Debian-6.0-root_fs_large"
+ETH0_OPTS="tuntap,,,192.168.0.254"
+
+COW_FILE_NAME="$1.cow"
+
+[ -e "${COW_FILE_NAME}" ] || { 
+	echo "il corrispondente file cow della macchina non esiste, vuoi crearlo? (y/n)";
+	read response
+	[ "$response" != "y" ] && die "come desidera padrone"
+}
+
+exec ./linux-3.2-rc ubd0=${COW_FILE_NAME},${DEBIAN_ROOT_FS} eth0="${ETH0_OPTS}"
