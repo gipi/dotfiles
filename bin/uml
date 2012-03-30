@@ -1,11 +1,12 @@
 #!/bin/bash
+# TODO: using uml_dir option to indicate a console management socket location
 
 die() {
 	echo $1
 	exit 1
 }
 
-[ -n "$1" ] || { die "usage $0 <machine name>"; }
+[ -n "$1" ] || { die "usage $0 [--list | <machine name>]"; }
 
 [ "$1" == "--list" ] && {
 	for machine in $(ls *.cow)
@@ -28,4 +29,4 @@ COW_FILE_NAME="$1.cow"
 	[ "$response" != "y" ] && die "come desidera padrone"
 }
 
-exec ./linux-3.2-rc ubd0=${COW_FILE_NAME},${DEBIAN_ROOT_FS} eth0="${ETH0_OPTS}"
+exec ./linux-3.2-rc ubd0=${COW_FILE_NAME},${DEBIAN_ROOT_FS} eth0="${ETH0_OPTS}" mem=256M
