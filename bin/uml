@@ -23,6 +23,10 @@ ETH0_OPTS="tuntap,,,192.168.0.254"
 
 COW_FILE_NAME="$1.cow"
 
+[ ! -e "${DEBIAN_ROOT_FS}" ] && {
+	die "root file system doesn't exist"
+}
+
 [ -e "${COW_FILE_NAME}" ] || { 
 	echo "il corrispondente file cow della macchina non esiste, vuoi crearlo? (y/n)";
 	read response
