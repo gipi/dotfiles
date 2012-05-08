@@ -9,7 +9,7 @@ die() {
 [ -n "$1" ] || { die "usage $0 [--list | <machine name>]"; }
 
 [ "$1" == "--list" ] && {
-	for machine in $(ls *.cow)
+	for machine in $(ls *.cow 2>/dev/null)
 	do
 		echo -e '\t'${machine/.cow/}
 	done
