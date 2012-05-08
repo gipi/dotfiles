@@ -2,7 +2,7 @@
 # TODO: using uml_dir option to indicate a console management socket location
 
 die() {
-	echo $1
+	echo "fatal: "$1
 	exit 1
 }
 
