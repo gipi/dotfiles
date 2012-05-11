@@ -104,7 +104,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 if [ -f /usr/src/git/contrib/completion/git-completion.bash ]; then
     . /usr/src/git/contrib/completion/git-completion.bash
 fi  # in order to show the brach in which you are
-hash git && PS1+='($(__git_ps1 "%s")) '
+hash git && PS1+='$(__git_ps1 "(%s)") '
 
 # Don't store duplicate adjacent items in the history
 HISTCONTROL=ignoreboth
