@@ -6,6 +6,8 @@ die() {
 	exit 1
 }
 
+# change path
+cd $(dirname "$0")
 [ -n "$1" ] || { die "usage $0 [--list | <machine name>]"; }
 
 [ "$1" == "--list" ] && {
