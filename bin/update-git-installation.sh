@@ -6,7 +6,7 @@ die() {
 
 if [ -z "$1" ]
 then
-	echo "I need a revision"
+	echo "I need a revision (e.g. a tag like 'v1.7.10.1')"
 	exit 1
 fi
 
