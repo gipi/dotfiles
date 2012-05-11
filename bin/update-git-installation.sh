@@ -21,4 +21,4 @@ git checkout -f $REV || exit 1
 make configure
 ./configure --prefix=/opt/git-${REV} || exit 1
 make -j 2 && make install && make -j 2 doc && make install-doc && \
-	cd /opt/ && unlink git && ln -s git-${REV} git
+	cd /opt/ && unlink git ; ln -s git-${REV} git
