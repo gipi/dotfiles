@@ -1,4 +1,8 @@
 #!/bin/sh
+die() {
+	echo -e "fatal: $1"
+	exit $2
+}
 
 if [ -z "$1" ]
 then
@@ -9,7 +13,9 @@ fi
 REV=$1
 SOURCE_PATH=/usr/src/git/
 
-cd ${SOURCE_PATH} || exit 1
+cd ${SOURCE_PATH} || {
+	die "the source code repository doesn't exist at '$SOURCE_PATH', clone it at 'git://github.com/git/git.git'" 1
+}
 git fetch
 git checkout -f $REV || exit 1
 make configure
