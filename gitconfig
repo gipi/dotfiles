@@ -1,3 +1,5 @@
+[core]
+    excludesfile = ~/.gitignore
 [user]
 	name = Gianluca Pacchiella
 	email = gianluca.pacchiella@ktln2.org
