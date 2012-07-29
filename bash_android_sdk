@@ -1,1 +1,1 @@
-PATH=/opt/android-sdk-linux_86/platform-tools/:/opt/android-sdk-linux_86/tools/:$PATH
+PATH=/opt/android-ndk/:/opt/android-sdk-linux_86/platform-tools/:/opt/android-sdk-linux_86/tools/:$PATH
