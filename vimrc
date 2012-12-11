@@ -10,7 +10,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
 
 " Python stuffs primarly
-set noexpandtab
+set expandtab
 let g:netrw_ftp_cmd = "lftp"
 
 set sw=4
