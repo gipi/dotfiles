@@ -2,9 +2,9 @@ syntax on
 set exrc
 filetype plugin on
 set hls
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:.\ ,eol:$
 " unicode 2026
-set showbreak=…
+set showbreak=...
 set list
 set laststatus=2
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
