@@ -6,6 +6,8 @@ set listchars=tab:▸\ ,eol:¬
 " unicode 2026
 set showbreak=…
 set list
+set laststatus=2
+set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
 
 " Python stuffs primarly
 set noexpandtab
