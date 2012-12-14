@@ -9,6 +9,9 @@ set list
 set laststatus=2
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
 
+" pathogen
+call pathogen#infect()
+
 " Python stuffs primarly
 set expandtab
 let g:netrw_ftp_cmd = "lftp"
