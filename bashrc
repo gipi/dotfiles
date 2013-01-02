@@ -108,3 +108,13 @@ hash git && PS1+='$(__git_ps1 "(%s)") '
 
 # Don't store duplicate adjacent items in the history
 HISTCONTROL=ignoreboth
+
+envactivate() {
+    if [ ! -f env/bin/activate ]
+    then
+        echo "virtualenv not found"
+        exit 1
+    fi
+
+    source env/bin/activate
+}
