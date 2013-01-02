@@ -47,3 +47,4 @@ make -j 2 && \
 	cd /opt/ && unlink git;
 # TODO: check if is the first installation and avoid unlink above
 ln -s git-${REV} git
+cp ${SOURCE_PATH}/contrib/completion/git-completion.bash ${PREFIX}
