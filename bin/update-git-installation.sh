@@ -44,4 +44,6 @@ make -j 2 && \
 	make -j 2 doc && \
 	make install-doc && \
     (test -d contrib/subtree && cd contrib/subtree && make prefix=$PREFIX && make prefix=$PREFIX install) && \
-	cd /opt/ && unlink git ; ln -s git-${REV} git
+	cd /opt/ && unlink git;
+# TODO: check if is the first installation and avoid unlink above
+ln -s git-${REV} git
