@@ -49,6 +49,7 @@ while [[ $1 ]]
         --help)
             usage
             exit_out '' '' 0
+            ;;
         --no-interactive)
             IS_INTERACTIVE=1
             shift
