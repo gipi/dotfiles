@@ -74,7 +74,7 @@ do
         README|conf)
             ;;
         *)
-            SRC="$f"
+            SRC=$(readlink -f "${DOTFILES_DIR}"/"$f")
             PREFIX=$(test -f "$SRC" && echo ".")
             DST="${HOME_PATH}"/${PREFIX}"$f"
             test -e "$DST" && echo " * '${DST}' exists, it'll be backuped"
