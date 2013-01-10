@@ -1,11 +1,12 @@
 #!/bin/sh
 # TODO: dependencies check (asciidoc)
 REV=$1
-SOURCE_PATH=/usr/src/git/
+BASE_SOURCE_PATH=/usr/src/
+SOURCE_PATH="${BASE_SOURCE_PATH}git/"
 PREFIX=/opt/git-${REV}/
 
 cd ${SOURCE_PATH} || {
-	die "the source code repository doesn't exist at '$SOURCE_PATH', clone it at 'git://github.com/git/git.git'" 1
+	die "the source code repository doesn't exist at '$SOURCE_PATH', clone it at 'git://github.com/git/git.git' or use --bootstrap" 1
 }
 
 
@@ -19,7 +20,7 @@ update() {
 }
 
 usage() {
-    echo "$0 [--update | revision]"
+    echo "$0 [--update | --bootstrap | revision]"
 
 }
 
@@ -36,7 +37,18 @@ then
     exit 0
 fi
 
-git checkout -f $REV || exit 1
+if [ "$1" == '--bootstrap' ]
+then
+    (
+    cd "${BASE_SOURCE_PATH}" && \
+        wget https://github.com/git/git/archive/v1.8.1.tar.gz && \
+        tar zxvf v1.8.1.tar.gz && \
+        cd v1.8.1
+    )
+else
+    git checkout -f $REV || exit 1
+fi
+
 make configure
 ./configure --prefix=$PREFIX || exit 1
 make -j 2 && \
