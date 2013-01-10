@@ -1,0 +1,8 @@
+These are my configuration files.
+
+INSTALLATION
+------------
+
+It's simple as
+
+ $ /path/to/dotfiles/conf/bootstrap.sh
