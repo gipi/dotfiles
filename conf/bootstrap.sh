@@ -70,15 +70,15 @@ echo Installing in "${HOME_PATH}"
 
 while read f
 do
-    case $f in
+    case "$f" in
         README|conf)
             ;;
         *)
-            SRC=$(readlink -f "${DOTFILES_DIR}"/"$f")
-            PREFIX=$(test -f "$SRC" && echo ".")
+            SRC="$(readlink -f "${DOTFILES_DIR}"/"$f")"
+            PREFIX="$(test -f "$SRC" && echo ".")"
             DST="${HOME_PATH}"/${PREFIX}"$f"
             test -e "$DST" && echo " * '${DST}' exists, it'll be backuped"
-            test ${IS_DRY} -eq 0 && cp -vr --backup=numbered ${SRC} ${DST}
+            test ${IS_DRY} -eq 0 && ln -s -v --backup=numbered "${SRC}" "${DST}"
             ;;
     esac
 done < <(ls "${DOTFILES_DIR}")
