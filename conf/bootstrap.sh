@@ -75,7 +75,7 @@ do
             ;;
         *)
             SRC="$(readlink -f "${DOTFILES_DIR}"/"$f")"
-            PREFIX="$(test -f "$SRC" && echo ".")"
+            PREFIX="$([[ -f "$SRC" || "${SRC}" =~ vim? ]] && echo ".")"
             DST="${HOME_PATH}"/${PREFIX}"$f"
             test -e "$DST" && echo " * '${DST}' exists, it'll be backuped"
             test ${IS_DRY} -eq 0 && ln -s -v --backup=numbered "${SRC}" "${DST}"
