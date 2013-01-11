@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Simple script to bootstrap thiese dot files
+# Simple script to bootstrap these dot files
 #
 # Check for pre-existent files and alert the user.
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
