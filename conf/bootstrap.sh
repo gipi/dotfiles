@@ -68,7 +68,7 @@ done
 
 echo Installing in "${HOME_PATH}"
 
-for f in $(ls ${DOTFILES_DIR})
+while read f
 do
     case $f in
         README|conf)
@@ -81,4 +81,4 @@ do
             test ${IS_DRY} -eq 0 && cp -vr --backup=numbered ${SRC} ${DST}
             ;;
     esac
-done
+done < <(ls "${DOTFILES_DIR}")
