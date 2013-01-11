@@ -66,18 +66,30 @@ while [[ $1 ]]
     esac
 done
 
+copy_to_dest() {
+    test ${IS_DRY} -eq 0 && ln -s -v --backup=numbered "${SRC}" "${DST}"
+}
+
 echo Installing in "${HOME_PATH}"
 
 while read f
 do
+    SRC="$(readlink -f "${DOTFILES_DIR}"/"$f")"
+    IS_DIR=$(test -d "$SRC" && echo 1)
+    PREFIX="$([[ -f "$SRC" || "${SRC}" =~ vim? ]] && echo ".")"
+
     case "$f" in
         README|conf)
             ;;
+        vim)
+            PREFIX="."
+            ;;
         *)
-            SRC="$(readlink -f "${DOTFILES_DIR}"/"$f")"
-            PREFIX="$([[ -f "$SRC" || "${SRC}" =~ vim? ]] && echo ".")"
-            DST="${HOME_PATH}"/${PREFIX}"$f"
-            test ${IS_DRY} -eq 0 && ln -s -v --backup=numbered "${SRC}" "${DST}"
             ;;
     esac
+
+    DST="${HOME_PATH}"/${PREFIX}"$f"
+
+    copy_to_dest "${SRC}" "${DST}"
+
 done < <(ls "${DOTFILES_DIR}")
