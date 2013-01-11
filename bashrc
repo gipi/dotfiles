@@ -113,11 +113,14 @@ hash git && PS1+='$(__git_ps1 "(%s) ")'
 HISTCONTROL=ignoreboth
 
 envactivate() {
-    if [ ! -f env/bin/activate ]
+    test -n "$1" && ENV_ROOT="$1"/
+    ENV_PATH="${ENV_ROOT}env/bin/activate"
+
+    if [ ! -f "${ENV_PATH}" ]
     then
-        echo "virtualenv not found"
-        exit 1
+        echo "virtualenv not found in '${ENV_PATH}'"
+        return 1
     fi
 
-    source env/bin/activate
+    source "${ENV_PATH}"
 }
