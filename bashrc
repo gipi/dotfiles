@@ -6,7 +6,7 @@
 [ -z "$PS1" ] && return
 
 # add some paths
-export PATH=~/bin/:/opt/git/bin/:$PATH
+export PATH=~/dotfiles/bin/:~/bin/:/opt/git/bin/:$PATH
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.

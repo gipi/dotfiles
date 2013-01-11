@@ -79,7 +79,7 @@ do
     PREFIX="$([[ -f "$SRC" || "${SRC}" =~ vim? ]] && echo ".")"
 
     case "$f" in
-        README|conf)
+        README|conf|bin)
             ;;
         vim)
             PREFIX="."
