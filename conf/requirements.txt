@@ -1,0 +1,4 @@
+pyserial
+pycrypto
+# npm install bower -g
+virtual-node
