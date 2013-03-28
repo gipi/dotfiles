@@ -109,9 +109,6 @@ if [ -f /usr/src/git/contrib/completion/git-completion.bash ]; then
 fi  # in order to show the brach in which you are
 hash git && PS1+='$(__git_ps1 "(%s) ")'
 
-# Don't store duplicate adjacent items in the history
-HISTCONTROL=ignoreboth
-
 envactivate() {
     test -n "$1" && ENV_ROOT="$1"/
     ENV_PATH="${ENV_ROOT}env/bin/activate"
