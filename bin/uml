@@ -1,5 +1,6 @@
 #!/bin/bash
 # TODO: using uml_dir option to indicate a console management socket location
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 die() {
 	echo "fatal: "$1
@@ -35,4 +36,4 @@ COW_FILE_NAME="$1.cow"
 	[ "$response" != "y" ] && die "come desidera padrone"
 }
 
-exec ./linux-3.2-rc ubd0=${COW_FILE_NAME},${DEBIAN_ROOT_FS} eth0="${ETH0_OPTS}" mem=256M
+exec ${DIR}/linux-3.2-rc ubd0=${COW_FILE_NAME},${DEBIAN_ROOT_FS} eth0="${ETH0_OPTS}" mem=256M
