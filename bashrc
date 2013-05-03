@@ -121,3 +121,5 @@ envactivate() {
 
     source "${ENV_PATH}"
 }
+
+. ~/dotfiles/liquidprompt/liquidprompt
