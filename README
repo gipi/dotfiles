@@ -5,4 +5,5 @@ INSTALLATION
 
 It's simple as
 
+ $ git clone --recursive https://github.com/gipi/dotfiles.git
  $ /path/to/dotfiles/conf/bootstrap.sh
