@@ -3,3 +3,4 @@ username = Gianluca Pacchiella <gp@ktln2.org>
 
 [extensions]
 record =
+hgshelve = ~/bin/hgshelve.py
