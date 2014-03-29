@@ -122,4 +122,15 @@ envactivate() {
     source "${ENV_PATH}"
 }
 
+cs() {
+    test -z "$1" && echo 'usage: cs <dev> <name>' && return
+    cryptsetup luksOpen $1 $2 && mount /dev/mapper/$2 /mnt/$2
+}
+
+decs() {
+    test -z "$1" && echo 'usage: decs <name>' && return
+    umount /mnt/$1
+    cryptsetup remove $1
+}
+
 . ~/dotfiles/liquidprompt/liquidprompt
