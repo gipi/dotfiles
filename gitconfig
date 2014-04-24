@@ -13,6 +13,7 @@
 	freshnclean = "!TDIR=$(mktemp -d);for f in $(git ls-files --others); do cp --parents $f ${TDIR};done;echo look in $TDIR"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	rebase-r-master = "!f() { git rebase --onto master $(git merge-base master $1) $1; }; f"
+    verydiff = "diff --stat --find-renames --find-copies HEAD"
 
 [diff "exif"]
 	textconv = exiftool
