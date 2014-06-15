@@ -133,4 +133,16 @@ decs() {
     cryptsetup remove $1
 }
 
+cl() {
+    test  $# -eq 2 || {
+        echo 'usage: clone <local dir> <git repository URL>'
+        exit 1
+    }
+    set -o pipefail
+    readonly LOCAL_DIR="$1"
+    readonly GIT_URL="$2"
+    readonly LOCAL_REPO_PATH="$(echo ${GIT_URL} | sed -e 's/\.git$//' -e 's/^.\+\///')"
+    cd "${LOCAL_DIR}" && git clone "${GIT_URL}" && cd "${LOCAL_REPO_PATH}"
+}
+
 . ~/dotfiles/liquidprompt/liquidprompt
