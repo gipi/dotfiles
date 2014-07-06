@@ -145,4 +145,9 @@ cl() {
     cd "${LOCAL_DIR}" && git clone "${GIT_URL}" && cd "${LOCAL_REPO_PATH}"
 }
 
+# symlink executable into your bin directory
+xinstall() {
+    ( cd ~/bin/ && ln -s $1 )
+}
+
 . ~/dotfiles/liquidprompt/liquidprompt
