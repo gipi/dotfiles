@@ -147,7 +147,10 @@ cl() {
 
 # symlink executable into your bin directory
 xinstall() {
-    ( cd ~/bin/ && ln -s $1 )
+    FILENAME=${1?usage: xinstall <path>}
+    DEST=~/bin/$(basename "${FILENAME}")
+    test -L "${DEST}" && echo 'previous link point to '$(readlink -m "${DEST}") && unlink "${DEST}"
+    ( cd ~/bin/ && ln -s "${FILENAME}" )
 }
 
 . ~/dotfiles/liquidprompt/liquidprompt
