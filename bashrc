@@ -157,6 +157,7 @@ cl() {
 xinstall() {
     FILENAME=${1?usage: xinstall <path>}
     DEST=~/bin/$(basename "${FILENAME}")
+    echo ${DEST}
     test -L "${DEST}" && echo 'previous link point to '$(readlink -m "${DEST}") && unlink "${DEST}"
     ( cd ~/bin/ && ln -s "${FILENAME}" )
 }
