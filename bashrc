@@ -109,6 +109,14 @@ if [ -f /usr/src/git/contrib/completion/git-completion.bash ]; then
 fi  # in order to show the brach in which you are
 hash git && PS1+='$(__git_ps1 "(%s) ")'
 
+envcreate() {
+    ENV_ROOT='./.virtualenv'
+    test -n "$1" && ENV_ROOT="$1"/
+    virtualenv --no-site-packages "${ENV_ROOT}"
+    source "${ENV_ROOT}"/bin/activate
+    pip install pip-tools pipdeptree
+}
+
 envactivate() {
     test -n "$1" && ENV_ROOT="$1"/
     ENV_PATH="${ENV_ROOT}env/bin/activate"
