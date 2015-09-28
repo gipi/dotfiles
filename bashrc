@@ -162,4 +162,9 @@ xinstall() {
     ( cd ~/bin/ && ln -s "${FILENAME}" )
 }
 
+cdscreen() {
+    cd $1 && screen
+}
 . ~/dotfiles/liquidprompt/liquidprompt
+
+
