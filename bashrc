@@ -156,6 +156,8 @@ cl() {
 # symlink executable into your bin directory
 xinstall() {
     FILENAME=${1?usage: xinstall <path>}
+    # use the absolute path as destination link
+    FILENAME=$(readlink -f ${FILENAME})
     DEST=~/bin/$(basename "${FILENAME}")
     echo ${DEST}
     test -L "${DEST}" && echo 'previous link point to '$(readlink -m "${DEST}") && unlink "${DEST}"
