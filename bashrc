@@ -170,3 +170,11 @@ cdscreen() {
 . ~/dotfiles/liquidprompt/liquidprompt
 
 
+dockertor() {
+    # launch a container (wo detaching) with tor
+    docker run -v /etc/localtime:/etc/localtime:ro -p 9050:9050 jess/tor-proxy
+}
+
+curltor() {
+    curl --socks http://localhost:9050 "$@"
+}
