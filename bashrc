@@ -178,3 +178,9 @@ dockertor() {
 curltor() {
     curl --socks http://localhost:9050 "$@"
 }
+
+pdf2booklet() {
+    local readonly INPUT="${1:?usage: pdf2booklet <input file> [output file]}"
+    local readonly OUTPUT="${2:-$2-booklet.pdf}"
+    pdftops -level3 "${INPUT}" - | psbook | psnup -2 | ps2pdf - "${OUTPUT}"
+}
