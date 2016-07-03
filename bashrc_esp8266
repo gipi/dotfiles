@@ -1,0 +1,8 @@
+export ESP_OPEN_SDK_PATH=/opt/esp-open-sdk/
+
+export PATH=${ESP_OPEN_SDK_PATH}/xtensa-lx106-elf/bin:$PATH
+# This below is the SDK downloaded from the expressif site and unziped
+export SDK_BASE=${ESP_OPEN_SDK_PATH}/sdk
+export ESPTOOL=${ESP_OPEN_SDK_PATH}/esptool/esptool.py
+export ESPPORT=/dev/ttyUSB0
+export ESPBAUD=460800
