@@ -181,6 +181,7 @@ curltor() {
 
 pdf2booklet() {
     local readonly INPUT="${1:?usage: pdf2booklet <input file> [output file]}"
-    local readonly OUTPUT="${2:-$1-booklet.pdf}"
+    local BASENAME="$(basename $1 .pdf)"
+    local readonly OUTPUT="${2:-$BASENAME-booklet.pdf}"
     pdftops -level3 "${INPUT}" - | psbook | psnup -2 | ps2pdf - "${OUTPUT}"
 }
