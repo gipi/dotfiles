@@ -562,6 +562,15 @@ pulseaudio(){
 		--name pulseaudio \
 		${DOCKER_REPO_PREFIX}/pulseaudio
 }
+
+radare2() {
+	docker run -it --rm \
+		-v /etc/localtime:/etc/localtime:ro \
+		-v $HOME/.config/radare2:/root/.config/radare2 \
+        -v $PWD:/app \
+        --workdir /app \
+        radare/radare2 /bin/bash
+}
 rainbowstream(){
 	docker run -it --rm \
 		-v /etc/localtime:/etc/localtime:ro \
