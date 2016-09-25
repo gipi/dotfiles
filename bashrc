@@ -119,7 +119,7 @@ envcreate() {
 
 envactivate() {
     test -n "$1" && ENV_ROOT="$1"/
-    ENV_PATH="${ENV_ROOT}env/bin/activate"
+    ENV_PATH="${ENV_ROOT:-.virtualenv}/bin/activate"
 
     if [ ! -f "${ENV_PATH}" ]
     then
