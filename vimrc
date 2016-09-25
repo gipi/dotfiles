@@ -36,3 +36,7 @@ endfunc
 " Arduino related stuffs
 " From https://github.com/GrayHats/arduino_scripts
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+
+" gruvbox colorscheme <https://github.com/morhetz/gruvbox/wiki/Usage>
+colorscheme gruvbox
+set background=dark    " Setting dark mode
