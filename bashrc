@@ -6,7 +6,7 @@
 [ -z "$PS1" ] && return
 
 # add some paths
-export PATH=~/dotfiles/bin/:~/bin/:/opt/git/bin/:$PATH
+export PATH=~/dotfiles/bin/:~/bin/:~/.local/bin:/opt/git/bin/:$PATH
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -185,3 +185,6 @@ pdf2booklet() {
     local readonly OUTPUT="${2:-$BASENAME-booklet.pdf}"
     pdftops -level3 "${INPUT}" - | psbook | psnup -2 | ps2pdf - "${OUTPUT}"
 }
+
+# use "gem install --user <gem>" that Ruby is a mountain of shit
+export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
