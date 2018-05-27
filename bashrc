@@ -187,4 +187,4 @@ pdf2booklet() {
 }
 
 # use "gem install --user <gem>" that Ruby is a mountain of shit
-export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+export PATH="$(ruby -rrubygems -e 'puts Gem.user_dir')/bin:$PATH"
