@@ -6,3 +6,4 @@ alias genpasswrd="cat /dev/urandom | LC_ALL=C tr -cd '[a-zA-Z0-9]' | head -c 12"
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias xbackup='rsync --update  --archive --xattrs --verbose'
+alias serializa='python -m serial.tools.miniterm'
