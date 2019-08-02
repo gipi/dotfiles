@@ -19,6 +19,10 @@ let g:netrw_ftp_cmd = "lftp"
 set sw=4
 set ts=4
 set sts=4
+set smartindent
+set smartcase
+set number
+set foldmethod=indent
 
 set mouse=a
 
