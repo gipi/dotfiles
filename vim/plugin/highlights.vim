@@ -131,7 +131,7 @@ function! s:MatchToggle()
   if exists('g:match_maps') && g:match_maps
     let g:match_maps = 0
     for i in range(0, 9)
-      execute 'unmap <k'.i.'>'
+      execute 'unmap <F'.i.'>'
     endfor
     nunmap <kMinus>
     nunmap <kPlus>
@@ -143,11 +143,11 @@ function! s:MatchToggle()
   else
     let g:match_maps = 1
     for i in range(1, 9)
-      execute 'vnoremap <silent> <k'.i.'> :<C-U>call <SID>DoHighlight('.i.', 1, v:count)<CR>'
-      execute 'nnoremap <silent> <k'.i.'> :<C-U>call <SID>DoHighlight('.i.', 2, v:count)<CR>'
+      execute 'vnoremap <silent> <F'.i.'> :<C-U>call <SID>DoHighlight('.i.', 1, v:count)<CR>'
+      execute 'nnoremap <silent> <F'.i.'> :<C-U>call <SID>DoHighlight('.i.', 2, v:count)<CR>'
     endfor
-    vnoremap <silent> <k0> :<C-U>call <SID>UndoHighlight(1)<CR>
-    nnoremap <silent> <k0> :<C-U>call <SID>UndoHighlight(2)<CR>
+    vnoremap <silent> <F10> :<C-U>call <SID>UndoHighlight(1)<CR>
+    nnoremap <silent> <F10> :<C-U>call <SID>UndoHighlight(2)<CR>
     nnoremap <silent> <kMinus> :call <SID>WindowMatches(0)<CR>
     nnoremap <silent> <kPlus> :call <SID>WindowMatches(1)<CR>
     nnoremap <silent> <kMultiply> :call <SID>WindowMatches(2)<CR>
@@ -155,6 +155,7 @@ function! s:MatchToggle()
     nnoremap <silent> <Leader>F :call <SID>Search(1)<CR>
     nnoremap <silent> <Leader>n :let @/=<SID>Search(0)<CR>
     nnoremap <silent> <Leader>N :let @/=<SID>Search(1)<CR>
+    
   endif
   call s:WindowMatches(g:match_maps)
   echo 'Mappings for matching:' g:match_maps ? 'ON' : 'off'
