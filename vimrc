@@ -42,7 +42,7 @@ endfunc
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 " gruvbox colorscheme <https://github.com/morhetz/gruvbox/wiki/Usage>
-colorscheme gruvbox
+colorscheme lucario
 set background=dark    " Setting dark mode
 " airline
 " let g:airline_powerline_fonts = 1
