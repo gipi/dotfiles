@@ -24,6 +24,9 @@ set smartcase
 set number
 set foldmethod=indent
 
+" https://stackoverflow.com/questions/923737/detect-file-change-offer-to-reload-file
+:autocmd CursorHold * checktime
+
 set mouse=a
 
 
