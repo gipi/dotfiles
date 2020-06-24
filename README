@@ -1,9 +1,9 @@
 These are my configuration files.
 
-INSTALLATION
-------------
+## Installation
 
 It's simple as
 
  $ git clone --recursive https://github.com/gipi/dotfiles.git
  $ /path/to/dotfiles/conf/bootstrap.sh
+ $ pip3 install --user conf/requirements.txt

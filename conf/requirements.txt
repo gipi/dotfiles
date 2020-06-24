@@ -3,3 +3,5 @@ pycrypto
 # npm install bower -g
 virtual-node
 flake8
+pylint
+python-language-server
