@@ -2,7 +2,7 @@
     excludesfile = ~/.gitignore
 [user]
 	name = Gianluca Pacchiella
-	email = gianluca.pacchiella@ktln2.org
+	email = gp@ktln2.org
 [color]
 	diff = true
 [sendemail]
