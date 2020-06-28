@@ -5,3 +5,4 @@ virtual-node
 flake8
 pylint
 python-language-server
+mypy
