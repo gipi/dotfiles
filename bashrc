@@ -110,9 +110,9 @@ fi  # in order to show the brach in which you are
 hash git && PS1+='$(__git_ps1 "(%s) ")'
 
 envcreate() {
-    ENV_ROOT='./.virtualenv'
+    ENV_ROOT='./.env3'
     test -n "$1" && ENV_ROOT="$1"/
-    virtualenv --no-site-packages --always-copy "${ENV_ROOT}"
+    python3 -m venv "${ENV_ROOT}"
     source "${ENV_ROOT}"/bin/activate
     pip install pip-tools pipdeptree
 }
