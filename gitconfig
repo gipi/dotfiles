@@ -19,3 +19,5 @@
 	textconv = exiftool
 [rerere]
     enabled = true
+[notes]
+    rewriteRef = refs/notes/*
